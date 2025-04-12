@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual-informed Silent Video Identity Conversion</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+        main {
+            padding: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .abstract {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        .image-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        footer {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Demo Page For "Visual-informed Silent Video Identity Conversion"</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Abstract</h2>
+            <p class="abstract">
+                Conventional voice conversion relies on audio input to modify voice characteristics from a source speaker to a target speaker. However, this process becomes infeasible when audio is unavailable, such as in silent videos or noisy environments. To overcome this limitation, we introduce Silent Video Identity Conversion (<strong>SVIC</strong>), the first approach to achieve speech conversion exclusively from visual inputs. Given only target speaker images and a silent lip video, SVIC reconstructs speech that simultaneously preserves the spoken content and reflects the target speaker’s identity, without any audio input.
+                <br><br>
+                However, as this task requires generating intelligible speech and converting identity using only visual cues, it is particularly challenging. To address this, we introduce the first approach for SVIC, <strong>ViSVIC</strong>, a novel single-stage framework that employs contrastive learning for cross-modality identity alignment and mutual information minimization for disentangling shared visual features.
+                <br><br>
+                Experimental objective and subjective results show that ViSVIC achieves impressive performance in both speech synthesis and identity conversion, especially under noisy conditions where methods dependent on audio input fail to produce intelligible results, demonstrating both the effectiveness of our training approach and the feasibility of SVIC.
+                <br><br>
+                Code and parameters will be made publicly available upon acceptance of this paper.
+            </p>
+        </section>
+
+        <section class="image-container">
+            <img src="figs/main.png" alt="Visual-informed Silent Video Identity Conversion">
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Visual-informed Silent Video Identity Conversion | All Rights Reserved</p>
+    </footer>
+</body>
+</html>
