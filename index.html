@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="index.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <title>ViSVIC</title>
+    <title>MuteSwap</title>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-156162365-1"></script>
@@ -29,7 +29,7 @@
     <div class="container" style="max-width:1200px;">
         <div class='row mt-5 mb-3'>
             <div class='col text-center'>
-                <p class="h3 font-weight-normal">Visual-informed Silent Video Identity Conversion</p>
+                <p class="h3 font-weight-normal">MuteSwap: Silent Face-based Voice Conversion</p>
             </div>
         </div>
     </div>
@@ -42,14 +42,18 @@
 
                 <div class="container" style="max-width:1100px; margin-top: 20px; margin-bottom: 40px">
                     <p style='line-height:1.3; font-size:large; text-align: justify'>
-                        Conventional voice conversion relies on audio input to modify voice characteristics from a source speaker to a target speaker. However, this process becomes infeasible when audio is unavailable, such as in silent videos or noisy environments. To overcome this limitation, we introduce Silent Video Identity Conversion (<strong>SVIC</strong>), the first approach to achieve speech conversion exclusively from visual inputs. Given only target speaker images and a silent lip video, SVIC reconstructs speech that simultaneously preserves the spoken content and reflects the target speaker’s identity, without any audio input.
-                    <br><br>
-                    However, as this task requires generating intelligible speech and converting identity using only visual cues, it is particularly challenging. To address this, we introduce the first approach for SVIC, <strong>ViSVIC</strong>, a novel single-stage framework that employs contrastive learning for cross-modality identity alignment and mutual information minimization for disentangling shared visual features.
-                    <br><br>
-                    Experimental objective and subjective results show that ViSVIC achieves impressive performance in both speech synthesis and identity conversion, especially under noisy conditions where methods dependent on audio input fail to produce intelligible results, demonstrating both the effectiveness of our training approach and the feasibility of SVIC.
-                    <br><br>
-                    Code and parameters will be made publicly available upon acceptance of this paper.
-                </p>
+                        Conventional voice conversion relies on audio input to modify voice characteristics from a source speaker to a target speaker. However, this process becomes infeasible when clean audio is unavailable, such as in silent videos or noisy environments. To overcome this limitation, we introduce Silent Face-based Voice Conversion (<b>SFVC</b>), the first approach to achieve speech conversion exclusively from visual inputs. Given only target speaker images and a silent lip video, SFVC reconstructs speech that simultaneously preserves the spoken content conditioned on the target speaker’s identity, without any audio input.
+                        However, as this task requires generating intelligible speech and converting identity using only visual cues, it is particularly challenging.
+                    </p>
+                    <p><img align="center" src="figs/whatissfvc.png" alt="SVG Image" style="  display: block ;
+                        margin-left: auto;
+                        margin-right: auto;
+                        width: 60%;"></p>
+                    <p style='line-height:1.3; font-size:large; text-align: justify'>
+                        To address this, we introduce the first approach for SFVC, <b>MuteSwap</b>, a novel single-stage framework that employs contrastive learning for cross-modality identity alignment and mutual information minimization for disentangling shared visual features.
+                        Experimental objective and subjective results show that MuteSwap achieves impressive performance in both speech synthesis and identity conversion, especially under noisy conditions where methods dependent on audio input fail to produce intelligible results, demonstrating both the effectiveness of our training approach and the feasibility of SFVC.
+                        Code and parameters will be made publicly available upon acceptance of this paper.
+                    </p>
                     <p><img align="center" src="figs/main.png" alt="SVG Image" style="  display: block ;
                         margin-left: auto;
                         margin-right: auto;
@@ -114,7 +118,7 @@
                 <td style="text-align: center;">SP-FaceVC</td>
                 <td style="text-align: center;">FVMVC (Noised)</td>
                 <td style="text-align: center;">SP-FaceVC (Noised)</td>
-                <td style="text-align: center;">ViSVIC</td>
+                <td style="text-align: center;">MuteSwap</td>
             </tr>
 
             <tr>
@@ -123,7 +127,7 @@
             <td><audio controls="" style='display: inline-block; padding:8px; width: 250px; height: 50px;'><source src="part_converted/mgcjr1yz7ow_00016_to_7kkRkhAXZGg_00006/sp_facevc.mp3"  type="audio/wav"></audio></td>
             <td><audio controls="" style='display: inline-block; padding:8px; width: 250px; height: 50px;'><source src="part_converted/mgcjr1yz7ow_00016_to_7kkRkhAXZGg_00006/fvmvc_noised.mp3" type="audio/wav"></audio></td>
             <td><audio controls="" style='display: inline-block; padding:8px; width: 250px; height: 50px;'><source src="part_converted/mgcjr1yz7ow_00016_to_7kkRkhAXZGg_00006/sp_facevc_noised.mp3"  type="audio/wav"></audio></td>
-            <td><audio controls="" style='display: inline-block; padding:8px; width: 250px; height: 50px;'><source src="part_converted/mgcjr1yz7ow_00016_to_7kkRkhAXZGg_00006/visvic.mp3"  type="audio/wav"></audio></td>
+            <td><audio controls="" style='display: inline-block; padding:8px; width: 250px; height: 50px;'><source src="part_converted/mgcjr1yz7ow_00016_to_7kkRkhAXZGg_00006/MuteSwap.mp3"  type="audio/wav"></audio></td>
             </tr>
         
         </table>
@@ -172,7 +176,7 @@
                 <td style="text-align: center;">SP-FaceVC</td>
                 <td style="text-align: center;">FVMVC (Noised)</td>
                 <td style="text-align: center;">SP-FaceVC (Noised)</td>
-                <td style="text-align: center;">ViSVIC</td>
+                <td style="text-align: center;">MuteSwap</td>
             </tr>
 
             <tr>
@@ -181,7 +185,7 @@
             <td><audio controls="" style='display: inline-block; padding:8px; width: 250px; height: 50px;'><source src="part_converted/ZJNESMhIxQ0_00004_to_9uOMectkCCs_00002/sp_facevc.mp3"  type="audio/wav"></audio></td>
             <td><audio controls="" style='display: inline-block; padding:8px; width: 250px; height: 50px;'><source src="part_converted/ZJNESMhIxQ0_00004_to_9uOMectkCCs_00002/fvmvc_noised.mp3" type="audio/wav"></audio></td>
             <td><audio controls="" style='display: inline-block; padding:8px; width: 250px; height: 50px;'><source src="part_converted/ZJNESMhIxQ0_00004_to_9uOMectkCCs_00002/sp_facevc_noised.mp3"  type="audio/wav"></audio></td>
-            <td><audio controls="" style='display: inline-block; padding:8px; width: 250px; height: 50px;'><source src="part_converted/ZJNESMhIxQ0_00004_to_9uOMectkCCs_00002/visvic.mp3"  type="audio/wav"></audio></td>
+            <td><audio controls="" style='display: inline-block; padding:8px; width: 250px; height: 50px;'><source src="part_converted/ZJNESMhIxQ0_00004_to_9uOMectkCCs_00002/MuteSwap.mp3"  type="audio/wav"></audio></td>
             </tr>
         
         </table>
@@ -229,7 +233,7 @@
                 <td style="text-align: center;">SP-FaceVC</td>
                 <td style="text-align: center;">FVMVC (Noised)</td>
                 <td style="text-align: center;">SP-FaceVC (Noised)</td>
-                <td style="text-align: center;">ViSVIC</td>
+                <td style="text-align: center;">MuteSwap</td>
             </tr>
 
             <tr>
@@ -238,7 +242,7 @@
             <td><audio controls="" style='display: inline-block; padding:8px; width: 250px; height: 50px;'><source src="part_converted/UAj1hsXp18c_00001_to_9uOMectkCCs_00004/sp_facevc.mp3"  type="audio/wav"></audio></td>
             <td><audio controls="" style='display: inline-block; padding:8px; width: 250px; height: 50px;'><source src="part_converted/UAj1hsXp18c_00001_to_9uOMectkCCs_00004/fvmvc_noised.mp3" type="audio/wav"></audio></td>
             <td><audio controls="" style='display: inline-block; padding:8px; width: 250px; height: 50px;'><source src="part_converted/UAj1hsXp18c_00001_to_9uOMectkCCs_00004/sp_facevc_noised.mp3"  type="audio/wav"></audio></td>
-            <td><audio controls="" style='display: inline-block; padding:8px; width: 250px; height: 50px;'><source src="part_converted/UAj1hsXp18c_00001_to_9uOMectkCCs_00004/visvic.mp3"  type="audio/wav"></audio></td>
+            <td><audio controls="" style='display: inline-block; padding:8px; width: 250px; height: 50px;'><source src="part_converted/UAj1hsXp18c_00001_to_9uOMectkCCs_00004/MuteSwap.mp3"  type="audio/wav"></audio></td>
             </tr>
         
         </table>
@@ -283,7 +287,7 @@
                 <td style="text-align: center;">SP-FaceVC</td>
                 <td style="text-align: center;">FVMVC (Noised)</td>
                 <td style="text-align: center;">SP-FaceVC (Noised)</td>
-                <td style="text-align: center;">ViSVIC</td>
+                <td style="text-align: center;">MuteSwap</td>
             </tr>
 
             <tr>
@@ -292,7 +296,7 @@
             <td><audio controls="" style='display: inline-block; padding:8px; width: 250px; height: 50px;'><source src="part_converted/xTkKSJSqUSI_00016_to_E22icGCvGXk_00006/sp_facevc.mp3"  type="audio/wav"></audio></td>
             <td><audio controls="" style='display: inline-block; padding:8px; width: 250px; height: 50px;'><source src="part_converted/xTkKSJSqUSI_00016_to_E22icGCvGXk_00006/fvmvc_noised.mp3" type="audio/wav"></audio></td>
             <td><audio controls="" style='display: inline-block; padding:8px; width: 250px; height: 50px;'><source src="part_converted/xTkKSJSqUSI_00016_to_E22icGCvGXk_00006/sp_facevc_noised.mp3"  type="audio/wav"></audio></td>
-            <td><audio controls="" style='display: inline-block; padding:8px; width: 250px; height: 50px;'><source src="part_converted/xTkKSJSqUSI_00016_to_E22icGCvGXk_00006/visvic.mp3"  type="audio/wav"></audio></td>
+            <td><audio controls="" style='display: inline-block; padding:8px; width: 250px; height: 50px;'><source src="part_converted/xTkKSJSqUSI_00016_to_E22icGCvGXk_00006/MuteSwap.mp3"  type="audio/wav"></audio></td>
             </tr>
         
         </table>
@@ -386,7 +390,7 @@
                     </div>
                 </div>
                 <div class='row' style='margin-top: 20px; margin-bottom: 0px;'>
-                    <p class='h5'>Converted utterances on Voxceleb2 using ViSVIC trained on LRS3 top200 dataset.</p>
+                    <p class='h5'>Converted utterances on Voxceleb2 using MuteSwap trained on LRS3 top200 dataset.</p>
                 </div>  
 
                 <table stype='width:80%' style="text-align: center;">
