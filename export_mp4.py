@@ -7,20 +7,31 @@ from pathlib import Path
 
 base_dir_str = "speakers_imgs/"
 base_dir = Path(base_dir_str)
-source_mp4_dir_str = "/data0/yfliu/lrs3/test"
-
+source_mp4_dir_str = "/data0/yfliu/voxceleb2/test/mp4/"
+source_wav_dir_str = "/data0/yfliu/voxceleb2/audio/test/mp4"
 files = [Path(x) for x in [
-  "speakers_imgs/UAj1hsXp18c/00011.mp4",
-  "speakers_imgs/81Ub0SMxZQo/00001.mp4",
-  "speakers_imgs/xTkKSJSqUSI/00008.mp4",
-  "speakers_imgs/E22icGCvGXk/00006.mp4",
-  "speakers_imgs/ZJNESMhIxQ0/00020.mp4",
-  "speakers_imgs/FFG2rilqT2g/00003.mp4",
+"speakers_imgs/id01000/CspIoS3ZZy4/00020.jpg",
+"speakers_imgs/id01066/7B-KDiAofNk/00030.jpg",
+"speakers_imgs/id01041/eMRxqsB3ghc/00358.jpg",
+"speakers_imgs/id01298/i8N_VPTGLis/00324.jpg",
+"speakers_imgs/id01437/jrXvutBWU8k/00205.jpg",
+"speakers_imgs/id01106/8NsKqf8qdIE/00049.jpg",
+"speakers_imgs/id01224/9gx7Y_kleU0/00064.jpg",
+"speakers_imgs/id01228/FiIjEyg3qe0/00108.jpg",
+"speakers_imgs/id01460/GKUwDs0BwGQ/00091.jpg",
+"speakers_imgs/id01066/7B-KDiAofNk/00030.jpg",
+"speakers_imgs/id01041/eMRxqsB3ghc/00358.jpg",
+"speakers_imgs/id01298/i8N_VPTGLis/00324.jpg",
+"speakers_imgs/id01066/FDp-ZLCWrIc/00054.jpg",
+"speakers_imgs/id01106/8NsKqf8qdIE/00049.jpg",
+"speakers_imgs/id01224/9gx7Y_kleU0/00064.jpg",
+"speakers_imgs/id01228/FiIjEyg3qe0/00108.jpg",
   ]]
 
-for target_mp4_file in files:
-    source_mp3_file = Path(os.path.join(source_mp4_dir_str, '/'.join(str(target_mp4_file).split('/')[-2:]))).with_suffix('.flac')
-    source_mp4_file = Path(os.path.join(source_mp4_dir_str, '/'.join(str(target_mp4_file).split('/')[-2:]))).with_suffix('.mp4')
+for file in files:
+    target_mp4_file = file.with_suffix('.mp4')
+    source_wav_file = Path(os.path.join(source_wav_dir_str, '/'.join(str(target_mp4_file).split('/')[-3:]))).with_suffix('.wav')
+    source_mp4_file = Path(os.path.join(source_mp4_dir_str, '/'.join(str(target_mp4_file).split('/')[-3:]))).with_suffix('.mp4')
 
     print(f"🔄 Processing {target_mp4_file.name}")
 
@@ -29,7 +40,7 @@ for target_mp4_file in files:
         subprocess.run([
             "ffmpeg", "-y",
             "-i", str(source_mp4_file),
-            "-i", str(source_mp3_file),
+            "-i", str(source_wav_file),
             "-c:v", "libx264",
             "-preset", "veryfast",
             "-crf", "23",
