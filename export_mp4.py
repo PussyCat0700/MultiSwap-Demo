@@ -9,17 +9,20 @@ base_dir_str = "speakers_imgs/"
 base_dir = Path(base_dir_str)
 source_mp4_dir_str = "/data0/yfliu/lrs3/test"
 
-jpg_files = sorted(base_dir.glob("*/*.jpg"))
+files = [Path(x) for x in [
+  "speakers_imgs/UAj1hsXp18c/00011.mp4",
+  "speakers_imgs/81Ub0SMxZQo/00001.mp4",
+  "speakers_imgs/xTkKSJSqUSI/00008.mp4",
+  "speakers_imgs/E22icGCvGXk/00006.mp4",
+  "speakers_imgs/ZJNESMhIxQ0/00020.mp4",
+  "speakers_imgs/FFG2rilqT2g/00003.mp4",
+  ]]
 
-for jpg_file in jpg_files:
-    target_mp4_file = jpg_file.with_suffix(".mp4")
-    source_mp3_file = Path(os.path.join(source_mp4_dir_str, '/'.join(str(jpg_file).split('/')[-2:]))).with_suffix('.flac')
-    source_mp4_file = Path(os.path.join(source_mp4_dir_str, '/'.join(str(jpg_file).split('/')[-2:]))).with_suffix('.mp4')
-    if not jpg_file.exists():
-        print(f"⚠️  Skipping: no matching .mp4 for {jpg_file.name}")
-        continue
+for target_mp4_file in files:
+    source_mp3_file = Path(os.path.join(source_mp4_dir_str, '/'.join(str(target_mp4_file).split('/')[-2:]))).with_suffix('.flac')
+    source_mp4_file = Path(os.path.join(source_mp4_dir_str, '/'.join(str(target_mp4_file).split('/')[-2:]))).with_suffix('.mp4')
 
-    print(f"🔄 Processing {jpg_file.name} -> {target_mp4_file.name}")
+    print(f"🔄 Processing {target_mp4_file.name}")
 
     try:
         # 调用 ffmpeg 替换音轨并重新编码
@@ -41,4 +44,4 @@ for jpg_file in jpg_files:
 
         print(f"✅ Exported: {target_mp4_file.name}")
     except subprocess.CalledProcessError:
-        print(f"❌ Failed to process: {jpg_file.name}")
+        print(f"❌ Failed to process: {file.name}")
