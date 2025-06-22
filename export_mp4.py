@@ -5,35 +5,18 @@ from pathlib import Path
 
 # 设置目录路径
 
-base_dir_str = "speakers_imgs/"
+base_dir_str = "part_converted/"
 base_dir = Path(base_dir_str)
-source_mp4_dir_str = "/data0/yfliu/voxceleb2/test/mp4/"
-source_wav_dir_str = "/data0/yfliu/voxceleb2/audio/test/mp4"
-files = [Path(x) for x in [
-"speakers_imgs/id01000/CspIoS3ZZy4/00020.jpg",
-"speakers_imgs/id01066/7B-KDiAofNk/00030.jpg",
-"speakers_imgs/id01041/eMRxqsB3ghc/00358.jpg",
-"speakers_imgs/id01298/i8N_VPTGLis/00324.jpg",
-"speakers_imgs/id01437/jrXvutBWU8k/00205.jpg",
-"speakers_imgs/id01106/8NsKqf8qdIE/00049.jpg",
-"speakers_imgs/id01224/9gx7Y_kleU0/00064.jpg",
-"speakers_imgs/id01228/FiIjEyg3qe0/00108.jpg",
-"speakers_imgs/id01460/GKUwDs0BwGQ/00091.jpg",
-"speakers_imgs/id01066/7B-KDiAofNk/00030.jpg",
-"speakers_imgs/id01041/eMRxqsB3ghc/00358.jpg",
-"speakers_imgs/id01298/i8N_VPTGLis/00324.jpg",
-"speakers_imgs/id01066/FDp-ZLCWrIc/00054.jpg",
-"speakers_imgs/id01106/8NsKqf8qdIE/00049.jpg",
-"speakers_imgs/id01224/9gx7Y_kleU0/00064.jpg",
-"speakers_imgs/id01228/FiIjEyg3qe0/00108.jpg",
-  ]]
+out_dir_str = "/data0/yfliu/outputs/baseline/nonparallel/output_top200/1gbs64_visvic_sbasedonc_fromscratch/lrs3/test_samples_p100"
 
-for file in files:
-    target_mp4_file = file.with_suffix('.mp4')
-    source_wav_file = Path(os.path.join(source_wav_dir_str, '/'.join(str(target_mp4_file).split('/')[-3:]))).with_suffix('.wav')
-    source_mp4_file = Path(os.path.join(source_mp4_dir_str, '/'.join(str(target_mp4_file).split('/')[-3:]))).with_suffix('.mp4')
-
-    print(f"🔄 Processing {target_mp4_file.name}")
+mp4_files = sorted(base_dir.glob("*"))
+for direc in mp4_files:
+    target_direc, target_id = direc.stem.split('_')[:2]
+    source_mp4_dir_str = os.path.join(out_dir_str, target_direc, target_id)
+    source_wav_file = source_mp4_dir_str+'_vc.mp3'
+    source_mp4_file = source_mp4_dir_str+'_vc.mp4'
+    print(f"🔄 Processing {source_mp4_file}")
+    target_mp4_file = direc / "muteunswap.mp4"
 
     try:
         # 调用 ffmpeg 替换音轨并重新编码
@@ -55,4 +38,4 @@ for file in files:
 
         print(f"✅ Exported: {target_mp4_file.name}")
     except subprocess.CalledProcessError:
-        print(f"❌ Failed to process: {file.name}")
+        print(f"❌ Failed to process: {target_mp4_file.name}")
