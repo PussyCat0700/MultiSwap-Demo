@@ -1,3 +1,4 @@
+from glob import glob
 import os
 import shutil
 import subprocess
@@ -62,11 +63,24 @@ from pathlib import Path
 #     except subprocess.CalledProcessError:
 #         print(f"❌ Failed to process: {target_mp4_file.name}")
 
-source_mp4_file = target_mp4_file \
-    = Path('./part_converted/ZJNESMhIxQ0_00004_to_9uOMectkCCs_00002/MultiSwap-A.mp4')
-source_mp3_file = Path('./part_converted/ZJNESMhIxQ0_00004_to_9uOMectkCCs_00002/MultiSwap-A.mp3')
-target_tmp_file = target_mp4_file.with_name(target_mp4_file.stem + "_temp.mp4")
-subprocess.run([
+# 构建匹配模式
+base_dir = './all_converted/lrs3'
+audio_base_dir = '/data0/yfliu/outputs/baseline/nonparallel/output_top200/1gbs64_fvc_sbasedonc_lstmvclub_unit_finetuned/lrs3/test_samples_N+swapped'
+# 构建匹配模式，匹配任何类似00003_vc.mp4的文件
+pattern = os.path.join(base_dir, '*/*_A.mp4')  # 匹配如：7kkRkhAXZGg/00003_vc.mp4, 00004_vc.mp4 等
+# 获取匹配到的文件
+matched_files = glob(pattern)
+for filename in matched_files:
+    rel_dir = Path(filename).relative_to(base_dir)
+    if len(str(rel_dir).split('_')) <= 2:
+        print(f'skipped {rel_dir}')
+        continue
+    source_mp4_file = target_mp4_file \
+        = Path(f'{base_dir}/{rel_dir}')
+    rel_dir = str(rel_dir.with_suffix('.mp3')).replace('_A.mp3', '_vc.mp3')
+    source_mp3_file = Path(f'{audio_base_dir}/{rel_dir}')
+    target_tmp_file = target_mp4_file.with_name(target_mp4_file.stem + "_temp.mp4")
+    subprocess.run([
         "ffmpeg", "-y",
         "-i", str(source_mp4_file),
         "-i", str(source_mp3_file),
@@ -80,8 +94,8 @@ subprocess.run([
         "-shortest",
         "-movflags", "+faststart",
         str(target_tmp_file)
-], check=True)
+    ], check=True)
         
-target_tmp_file.replace(target_mp4_file)
+    target_tmp_file.replace(target_mp4_file)
 
-print(f"✅ Exported: {target_mp4_file.name}")
+    print(f"✅ Exported: {target_mp4_file.name}")
