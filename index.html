@@ -349,20 +349,23 @@
             </div>
           </div>
           <p style='line-height:1.3; font-size:large; text-align: justify'>
-            The model learns to synthesize speech from silent lip videos conditioned on facial images.<br>
+            MultiSwap learns to synthesize speech conditioned on facial images.<br>
             Homogeneous and Divergent Image Sources represent facial images sampled from:
-            <br> (1) different videos of a speaker;
-            <br> (2) videos of different speakers.
+            <br> (1) the same speaker;
+            <br> (2) another speaker.
             <br> For vanilla synthesis, the facial images are sampled from the same full-face video corresponding to the silent lip.
+            We exhibit content as lip-region video with its original sound track for brevity. However, for different tasks, their content inputs are still different.
           </p>
           <table align="center" stype='width:80%' style="text-align: center;">
           <tbody>
             <tr>
-              <td colspan="1">Silent Lip
+              <td></td>
+              <td colspan="1">Content Input
               <td colspan="2">Homogeneous Image Sources
               <td colspan="3">Divergent Image Sources
             </tr>
             <tr>
+              <td><b>Inputs</b></td>
               <td>
                 <video width="150" controls>
                   <source src="all_converted/lrs3/7kkRkhAXZGg/00006.mp4" type="video/mp4">
@@ -400,53 +403,140 @@
                 </video>
               </td>
             </tr>
-            <tr><td colspan="6">Synthesized Speeches</td></tr>
-            <tr><td>Vanilla Synthesis</td><td colspan="5">Identity Converted</td></tr>
+            <tr><td></td><td colspan="6"><b>Synthesized Speeches</b></td></tr>
+            <tr><td></td><td>Vanilla Synthesis</td><td colspan="5">Identity Converted</td></tr>
             <tr>
               <td>
+                <b>A+I→A</b>
+              </td>
+              <td>
                 <video width="150" controls>
-                  <source src="all_converted/lrs3/7kkRkhAXZGg/00006_vc.mp4" type="video/mp4">
+                  <source src="all_converted/lrs3/7kkRkhAXZGg/00006_A.mp4" type="video/mp4">
                   Your browser does not support the video tag.
                 </video>
               </td>
               <td>
                 <video width="150" controls>
-                  <source src="all_converted/lrs3/7kkRkhAXZGg/00006_test_mgcjr1yz7ow_00002_vc.mp4" type="video/mp4">
+                  <source src="all_converted/lrs3/7kkRkhAXZGg/00006_test_mgcjr1yz7ow_00002_A.mp4" type="video/mp4">
                   Your browser does not support the video tag.
                 </video>
               </td>
               <td>
                 <video width="150" controls>
-                  <source src="all_converted/lrs3/7kkRkhAXZGg/00006_test_mgcjr1yz7ow_00003_vc.mp4" type="video/mp4">
+                  <source src="all_converted/lrs3/7kkRkhAXZGg/00006_test_mgcjr1yz7ow_00003_A.mp4" type="video/mp4">
                   Your browser does not support the video tag.
                 </video>
               </td>
               <td>
                 <video width="150" controls>
-                  <source src="all_converted/lrs3/7kkRkhAXZGg/00006_test_UAj1hsXp18c_00003_vc.mp4" type="video/mp4">
+                  <source src="all_converted/lrs3/7kkRkhAXZGg/00006_test_UAj1hsXp18c_00003_A.mp4" type="video/mp4">
                   Your browser does not support the video tag.
                 </video>
               </td>
               <td>
                 <video width="150" controls>
-                  <source src="all_converted/lrs3/7kkRkhAXZGg/00006_test_xTkKSJSqUSI_00004_vc.mp4" type="video/mp4">
+                  <source src="all_converted/lrs3/7kkRkhAXZGg/00006_test_xTkKSJSqUSI_00004_A.mp4" type="video/mp4">
                   Your browser does not support the video tag.
                 </video>
               </td>
               <td>
                 <video width="150" controls>
-                  <source src="all_converted/lrs3/7kkRkhAXZGg/00006_test_ZJNESMhIxQ0_00003_vc.mp4" type="video/mp4">
+                  <source src="all_converted/lrs3/7kkRkhAXZGg/00006_test_ZJNESMhIxQ0_00003_A.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <b>V+I→A</b>
+              </td>
+              <td>
+                <video width="150" controls>
+                  <source src="all_converted/lrs3/7kkRkhAXZGg/00006_V.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </td>
+              <td>
+                <video width="150" controls>
+                  <source src="all_converted/lrs3/7kkRkhAXZGg/00006_test_mgcjr1yz7ow_00002_V.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </td>
+              <td>
+                <video width="150" controls>
+                  <source src="all_converted/lrs3/7kkRkhAXZGg/00006_test_mgcjr1yz7ow_00003_V.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </td>
+              <td>
+                <video width="150" controls>
+                  <source src="all_converted/lrs3/7kkRkhAXZGg/00006_test_UAj1hsXp18c_00003_V.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </td>
+              <td>
+                <video width="150" controls>
+                  <source src="all_converted/lrs3/7kkRkhAXZGg/00006_test_xTkKSJSqUSI_00004_V.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </td>
+              <td>
+                <video width="150" controls>
+                  <source src="all_converted/lrs3/7kkRkhAXZGg/00006_test_ZJNESMhIxQ0_00003_V.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <b>AV+I→A</b>
+              </td>
+              <td>
+                <video width="150" controls>
+                  <source src="all_converted/lrs3/7kkRkhAXZGg/00006_AV.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </td>
+              <td>
+                <video width="150" controls>
+                  <source src="all_converted/lrs3/7kkRkhAXZGg/00006_test_mgcjr1yz7ow_00002_AV.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </td>
+              <td>
+                <video width="150" controls>
+                  <source src="all_converted/lrs3/7kkRkhAXZGg/00006_test_mgcjr1yz7ow_00003_AV.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </td>
+              <td>
+                <video width="150" controls>
+                  <source src="all_converted/lrs3/7kkRkhAXZGg/00006_test_UAj1hsXp18c_00003_AV.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </td>
+              <td>
+                <video width="150" controls>
+                  <source src="all_converted/lrs3/7kkRkhAXZGg/00006_test_xTkKSJSqUSI_00004_AV.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </td>
+              <td>
+                <video width="150" controls>
+                  <source src="all_converted/lrs3/7kkRkhAXZGg/00006_test_ZJNESMhIxQ0_00003_AV.mp4" type="video/mp4">
                   Your browser does not support the video tag.
                 </video>
               </td>
             </tr>
             <td colspan="6"><hr></td>
             <tr>
-              <td colspan="1">Silent Lip
+              <td></td>
+              <td colspan="1">Content
               <td colspan="2">Homogeneous Image Sources
               <td colspan="3">Divergent Image Sources
             </tr>
             <tr>
+              <td><b>Inputs</b></td>
               <td>
                 <video width="150" controls>
                   <source src="all_converted/lrs3/9uOMectkCCs/00002.mp4" type="video/mp4">
@@ -484,211 +574,125 @@
                 </video>
               </td>
             </tr>
-            <tr><td colspan="6">Synthesized Speeches</td></tr>
-            <tr><td>Vanilla Synthesis</td><td colspan="5">Identity Converted</td></tr><tr>
-              <td>
-                <video width="150" controls>
-                  <source src="all_converted/lrs3/9uOMectkCCs/00002_vc.mp4" type="video/mp4">
-                  Your browser does not support the video tag.
-                </video>
-              </td>
-              <td>
-                <video width="150" controls>
-                  <source src="all_converted/lrs3/9uOMectkCCs/00002_test_UAj1hsXp18c_00003_vc.mp4" type="video/mp4">
-                  Your browser does not support the video tag.
-                </video>
-              </td>
-              <td>
-                <video width="150" controls>
-                  <source src="all_converted/lrs3/9uOMectkCCs/00002_test_UAj1hsXp18c_00012_vc.mp4" type="video/mp4">
-                  Your browser does not support the video tag.
-                </video>
-              </td>
-              <td>
-                <video width="150" controls>
-                  <source src="all_converted/lrs3/9uOMectkCCs/00002_test_mgcjr1yz7ow_00003_vc.mp4" type="video/mp4">
-                  Your browser does not support the video tag.
-                </video>
-              </td>
-              <td>
-                <video width="150" controls>
-                  <source src="all_converted/lrs3/9uOMectkCCs/00002_test_xTkKSJSqUSI_00012_vc.mp4" type="video/mp4">
-                  Your browser does not support the video tag.
-                </video>
-              </td>
-              <td>
-                <video width="150" controls>
-                  <source src="all_converted/lrs3/9uOMectkCCs/00002_test_ZJNESMhIxQ0_00021_vc.mp4" type="video/mp4">
-                  Your browser does not support the video tag.
-                </video>
-              </td>
-            </tr>
-            <td colspan="6"><hr></td>
+            <tr><td></td><td colspan="6"><b>Synthesized Speeches</b></td></tr>
+            <tr><td></td><td>Vanilla Synthesis</td><td colspan="5">Identity Converted</td></tr><tr>
             <tr>
-              <td colspan="1">Silent Lip
-              <td colspan="2">Homogeneous Image Sources
-              <td colspan="3">Divergent Image Sources
+              <td><b>A+I→A</b></td>
+              <td>
+                <video width="150" controls>
+                  <source src="all_converted/lrs3/9uOMectkCCs/00002_A.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </td>
+              <td>
+                <video width="150" controls>
+                  <source src="all_converted/lrs3/9uOMectkCCs/00002_test_UAj1hsXp18c_00003_A.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </td>
+              <td>
+                <video width="150" controls>
+                  <source src="all_converted/lrs3/9uOMectkCCs/00002_test_UAj1hsXp18c_00012_A.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </td>
+              <td>
+                <video width="150" controls>
+                  <source src="all_converted/lrs3/9uOMectkCCs/00002_test_mgcjr1yz7ow_00003_A.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </td>
+              <td>
+                <video width="150" controls>
+                  <source src="all_converted/lrs3/9uOMectkCCs/00002_test_xTkKSJSqUSI_00012_A.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </td>
+              <td>
+                <video width="150" controls>
+                  <source src="all_converted/lrs3/9uOMectkCCs/00002_test_ZJNESMhIxQ0_00021_A.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </td>
             </tr>
             <tr>
+              <td><b>V+I→A</b></td>
               <td>
                 <video width="150" controls>
-                  <source src="all_converted/lrs3/E22icGCvGXk/00001.mp4" type="video/mp4">
+                  <source src="all_converted/lrs3/9uOMectkCCs/00002_V.mp4" type="video/mp4">
                   Your browser does not support the video tag.
                 </video>
               </td>
               <td>
                 <video width="150" controls>
-                  <source src="all_converted/lrs3/xTkKSJSqUSI/00004.mp4" type="video/mp4">
+                  <source src="all_converted/lrs3/9uOMectkCCs/00002_test_UAj1hsXp18c_00003_V.mp4" type="video/mp4">
                   Your browser does not support the video tag.
                 </video>
               </td>
               <td>
                 <video width="150" controls>
-                  <source src="all_converted/lrs3/xTkKSJSqUSI/00012.mp4" type="video/mp4">
+                  <source src="all_converted/lrs3/9uOMectkCCs/00002_test_UAj1hsXp18c_00012_V.mp4" type="video/mp4">
                   Your browser does not support the video tag.
                 </video>
               </td>
               <td>
                 <video width="150" controls>
-                  <source src="all_converted/lrs3/mgcjr1yz7ow/00002.mp4" type="video/mp4">
+                  <source src="all_converted/lrs3/9uOMectkCCs/00002_test_mgcjr1yz7ow_00003_V.mp4" type="video/mp4">
                   Your browser does not support the video tag.
                 </video>
               </td>
               <td>
                 <video width="150" controls>
-                  <source src="all_converted/lrs3/UAj1hsXp18c/00003.mp4" type="video/mp4">
+                  <source src="all_converted/lrs3/9uOMectkCCs/00002_test_xTkKSJSqUSI_00012_V.mp4" type="video/mp4">
                   Your browser does not support the video tag.
                 </video>
               </td>
               <td>
                 <video width="150" controls>
-                  <source src="all_converted/lrs3/ZJNESMhIxQ0/00003.mp4" type="video/mp4">
-                  Your browser does not support the video tag.
-                </video>
-              </td>
-            </tr>
-            <tr><td colspan="6">Synthesized Speeches</td></tr>
-            <tr><td>Vanilla Synthesis</td><td colspan="5">Identity Converted</td></tr><tr>
-              <td>
-                <video width="150" controls>
-                  <source src="all_converted/lrs3/E22icGCvGXk/00001_vc.mp4" type="video/mp4">
-                  Your browser does not support the video tag.
-                </video>
-              </td>
-              <td>
-                <video width="150" controls>
-                  <source src="all_converted/lrs3/E22icGCvGXk/00001_test_xTkKSJSqUSI_00004_vc.mp4" type="video/mp4">
-                  Your browser does not support the video tag.
-                </video>
-              </td>
-              <td>
-                <video width="150" controls>
-                  <source src="all_converted/lrs3/E22icGCvGXk/00001_test_xTkKSJSqUSI_00012_vc.mp4" type="video/mp4">
-                  Your browser does not support the video tag.
-                </video>
-              </td>
-              <td>
-                <video width="150" controls>
-                  <source src="all_converted/lrs3/E22icGCvGXk/00001_test_mgcjr1yz7ow_00002_vc.mp4" type="video/mp4">
-                  Your browser does not support the video tag.
-                </video>
-              </td>
-              <td>
-                <video width="150" controls>
-                  <source src="all_converted/lrs3/E22icGCvGXk/00001_test_UAj1hsXp18c_00003_vc.mp4" type="video/mp4">
-                  Your browser does not support the video tag.
-                </video>
-              </td>
-              <td>
-                <video width="150" controls>
-                  <source src="all_converted/lrs3/E22icGCvGXk/00001_test_ZJNESMhIxQ0_00003_vc.mp4" type="video/mp4">
+                  <source src="all_converted/lrs3/9uOMectkCCs/00002_test_ZJNESMhIxQ0_00021_V.mp4" type="video/mp4">
                   Your browser does not support the video tag.
                 </video>
               </td>
             </tr>
-            <td colspan="6"><hr></td>
             <tr>
-              <td colspan="1">Silent Lip
-              <td colspan="2">Homogeneous Image Sources
-              <td colspan="3">Divergent Image Sources
-            </tr><tr>
-              <tr>
-                <td>
-                  <video width="150" controls>
-                    <source src="all_converted/lrs3/sxnlvwprfSc/00003.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                  </video>
-                </td>
-                <td>
-                  <video width="150" controls>
-                    <source src="all_converted/lrs3/UAj1hsXp18c/00003.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                  </video>
-                </td>
-                <td>
-                  <video width="150" controls>
-                    <source src="all_converted/lrs3/UAj1hsXp18c/00012.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                  </video>
-                </td>
-                <td>
-                  <video width="150" controls>
-                    <source src="all_converted/lrs3/xTkKSJSqUSI/00012.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                  </video>
-                </td>
-                <td>
-                  <video width="150" controls>
-                    <source src="all_converted/lrs3/mgcjr1yz7ow/00003.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                  </video>
-                </td>
-                <td>
-                  <video width="150" controls>
-                    <source src="all_converted/lrs3/ZJNESMhIxQ0/00021.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                  </video>
-                </td>
-              </tr>
-              <tr><td colspan="6">Synthesized Speeches</td></tr>
-              <tr><td>Vanilla Synthesis</td><td colspan="5">Identity Converted</td></tr><tr>
-                <td>
-                  <video width="150" controls>
-                    <source src="all_converted/lrs3/sxnlvwprfSc/00003_vc.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                  </video>
-                </td>
-                <td>
-                  <video width="150" controls>
-                    <source src="all_converted/lrs3/sxnlvwprfSc/00003_test_UAj1hsXp18c_00003_vc.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                  </video>
-                </td>
-                <td>
-                  <video width="150" controls>
-                    <source src="all_converted/lrs3/sxnlvwprfSc/00003_test_UAj1hsXp18c_00012_vc.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                  </video>
-                </td>
-                <td>
-                  <video width="150" controls>
-                    <source src="all_converted/lrs3/sxnlvwprfSc/00003_test_xTkKSJSqUSI_00012_vc.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                  </video>
-                </td>
-                <td>
-                  <video width="150" controls>
-                    <source src="all_converted/lrs3/sxnlvwprfSc/00003_test_mgcjr1yz7ow_00003_vc.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                  </video>
-                </td>
-                <td>
-                  <video width="150" controls>
-                    <source src="all_converted/lrs3/sxnlvwprfSc/00003_test_ZJNESMhIxQ0_00021_vc.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                  </video>
-                </td>
-              </tr>
+              <td><b>AV+I→A</b></td>
+              <td>
+                <video width="150" controls>
+                  <source src="all_converted/lrs3/9uOMectkCCs/00002_AV.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </td>
+              <td>
+                <video width="150" controls>
+                  <source src="all_converted/lrs3/9uOMectkCCs/00002_test_UAj1hsXp18c_00003_AV.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </td>
+              <td>
+                <video width="150" controls>
+                  <source src="all_converted/lrs3/9uOMectkCCs/00002_test_UAj1hsXp18c_00012_AV.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </td>
+              <td>
+                <video width="150" controls>
+                  <source src="all_converted/lrs3/9uOMectkCCs/00002_test_mgcjr1yz7ow_00003_AV.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </td>
+              <td>
+                <video width="150" controls>
+                  <source src="all_converted/lrs3/9uOMectkCCs/00002_test_xTkKSJSqUSI_00012_AV.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </td>
+              <td>
+                <video width="150" controls>
+                  <source src="all_converted/lrs3/9uOMectkCCs/00002_test_ZJNESMhIxQ0_00021_AV.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </td>
+            </tr>
               
   
           </tbody>
