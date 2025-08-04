@@ -29,7 +29,7 @@
     <div class="container" style="max-width:1200px;">
         <div class='row mt-5 mb-3'>
             <div class='col text-center'>
-                <p class="h3 font-weight-normal">MuteSwap: Silent Face-based Voice Conversion</p>
+                <p class="h3 font-weight-normal">MultiSwap: Cross-Modal Identity Conversion with Silent Video and Audio Inputs</p>
             </div>
         </div>
     </div>
@@ -42,19 +42,17 @@
 
                 <div class="container" style="max-width:1100px; margin-top: 20px; margin-bottom: 40px">
                     <p style='line-height:1.3; font-size:large; text-align: justify'>
-                        Conventional voice conversion relies on audio input to modify voice characteristics from a source speaker to a target speaker. However, this process becomes infeasible when clean audio is unavailable, such as in silent videos or noisy environments. To overcome this limitation, we introduce Silent Face-based Voice Conversion (<b>SFVC</b>), the first approach to achieve speech conversion exclusively from visual inputs. Given only target speaker images and a silent lip video, SFVC reconstructs speech that simultaneously preserves the spoken content conditioned on the target speaker’s identity, without any audio input.
-                        However, as this task requires generating intelligible speech and converting identity using only visual cues, it is particularly challenging.
+                      Face-based Voice Conversion (FVC) uses facial images to represent and modify speaker identity, relying on source speech to provide content reference while ensuring that the output speech matches the target speaker's identity inferred from facial images. While facial identity is derived from visual input, the content is traditionally taken from speech, creating an audio-visual gap between content and identity.
+                      To address this challenge, we propose <b>MultiSwap</b>, a novel framework that extends FVC by integrating both audio and visual modalities for the content input, which handles three distinct sub-tasks: V+I→A (silent video with identity image to speech), A+I→A (audio and identity image to speech), and AV+I→A (combined audio-visual and identity image to speech).
                     </p>
-                    <p><img align="center" src="figs/whatissfvc.png" alt="SVG Image" style="  display: block ;
+                    <p><img align="center" src="figs/whatisourtask.png" alt="SVG Image" style="  display: block ;
                         margin-left: auto;
                         margin-right: auto;
                         width: 60%;"></p>
                     <p style='line-height:1.3; font-size:large; text-align: justify'>
-                        To address this, we introduce the first approach for SFVC, <b>MuteSwap</b>, a novel single-stage framework that employs contrastive learning for cross-modality identity alignment and mutual information minimization for disentangling shared visual features.
-                        Experimental objective and subjective results show that MuteSwap achieves impressive performance in both speech synthesis and identity conversion, especially under noisy conditions where methods dependent on audio input fail to produce intelligible results, demonstrating both the effectiveness of our training approach and the feasibility of SFVC.
-                        Code and parameters will be made publicly available upon acceptance of this paper.
+                      We introduce task-specific models for each sub-task as well as a unified solution that can handle all three tasks with a single model. Additionally, we propose a noise-robust version of MultiSwap, with a relative improvement of 58\% in content recovery compared to previous FVC methods under noise. Across all tasks, MultiSwap demonstrates strong performance in speech conversion and synthesis, as measured by both objective and subjective metrics, demonstrating its potential for multi-modal FVC applications.
                     </p>
-                    <p><img align="center" src="figs/main.png" alt="SVG Image" style="  display: block ;
+                    <p><img align="center" src="figs/mainfig.png" alt="SVG Image" style="  display: block ;
                         margin-left: auto;
                         margin-right: auto;
                         width: 100%;"></p>
