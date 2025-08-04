@@ -64,21 +64,17 @@ from pathlib import Path
 #         print(f"❌ Failed to process: {target_mp4_file.name}")
 
 # 构建匹配模式
-base_dir = './all_converted/lrs3'
-audio_base_dir = '/data0/yfliu/outputs/baseline/nonparallel/output_top200/1gbs64_fvc_sbasedonc_lstmvclub_unit_finetuned/lrs3/test_samples_N+swapped'
-# 构建匹配模式，匹配任何类似00003_vc.mp4的文件
-pattern = os.path.join(base_dir, '*/*_A.mp4')  # 匹配如：7kkRkhAXZGg/00003_vc.mp4, 00004_vc.mp4 等
+base_dir = audio_base_dir = './part_converted'
+# 构建匹配模式，匹配任何类似00003_vc.mp3的文件
+pattern = os.path.join(base_dir, '*/*-AN.mp3')  # 匹配如：7kkRkhAXZGg/00003_vc.mp3, 00004_vc.mp3 等
 # 获取匹配到的文件
 matched_files = glob(pattern)
 for filename in matched_files:
     rel_dir = Path(filename).relative_to(base_dir)
-    if len(str(rel_dir).split('_')) <= 2:
-        print(f'skipped {rel_dir}')
-        continue
-    source_mp4_file = target_mp4_file \
-        = Path(f'{base_dir}/{rel_dir}')
-    rel_dir = str(rel_dir.with_suffix('.mp3')).replace('_A.mp3', '_vc.mp3')
-    source_mp3_file = Path(f'{audio_base_dir}/{rel_dir}')
+    source_mp3_file = Path(f'{base_dir}/{rel_dir}')
+    target_mp4_file = source_mp3_file.with_suffix('.mp4')
+    rel_dir = os.path.join(os.path.dirname(str(rel_dir)), 'gt_src.mp4')
+    source_mp4_file = Path(f'{audio_base_dir}/{rel_dir}')
     target_tmp_file = target_mp4_file.with_name(target_mp4_file.stem + "_temp.mp4")
     subprocess.run([
         "ffmpeg", "-y",
