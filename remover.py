@@ -9,7 +9,7 @@ def list_files_to_delete(root_dir):
         for filename in filenames:
             file_path = os.path.join(dirpath, filename)
             # 检查需要删除的文件
-            if filename.endswith(('.png', '.jpg')):
+            if filename.endswith(('.png', '.jpg', '.wav')):
                 files_to_delete.append(file_path)
             elif filename.endswith('.mp3') and filename != 'gt_src.mp3':
                 files_to_delete.append(file_path)
