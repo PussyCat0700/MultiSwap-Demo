@@ -13,6 +13,8 @@ def list_files_to_delete(root_dir):
                 files_to_delete.append(file_path)
             elif filename.endswith('.mp3') and filename != 'gt_src.mp3':
                 files_to_delete.append(file_path)
+            if '_vc.' in filename:
+                files_to_delete.append(file_path)
     
     return files_to_delete
 
