@@ -25,13 +25,26 @@
 
 <body>
 
-    <!-- Title -->
     <div class="container" style="max-width:1200px;">
+        <!-- Title -->
         <div class='row mt-5 mb-3'>
             <div class='col text-center'>
                 <p class="h3 font-weight-normal">MultiSwap: Cross-Modal Identity Conversion with Silent Video and Audio Inputs</p>
             </div>
         </div>
+        <!-- Authors -->
+        <div class="row mb-3">
+          <div class="col text-center">
+            <p>
+              <strong>Yifan Liu<sup>1</sup>, Yu Fang<sup>1</sup>, Chao Zhang<sup>2,3</sup>, Zhouhan Lin<sup>1</sup></strong>
+            </p>
+            <p class="text-muted small">
+              <sup>1</sup> Shanghai Jiao Tong University &nbsp; | &nbsp; 
+              <sup>2</sup> Shanghai AI Lab &nbsp; | &nbsp; 
+              <sup>3</sup> Tsinghua University
+            </p>
+          </div>
+    </div>
     </div>
     <div class="container" style="max-width:1100px;">
 
@@ -42,7 +55,7 @@
 
                 <div class="container" style="max-width:1100px; margin-top: 20px; margin-bottom: 40px">
                     <p style='line-height:1.3; font-size:large; text-align: justify'>
-                      Face-based Voice Conversion (FVC) uses facial images to represent and modify speaker identity, relying on source speech to provide content reference while ensuring that the output speech matches the target speaker's identity inferred from facial images. While facial identity is derived from visual input, the content is traditionally taken from speech, creating an audio-visual gap between content and identity.
+                      Face-based Voice Conversion (FVC) leverages facial representations to modify speaker identity, using source speech to provide content while ensuring the generated speech matches the target identity inferred from facial images. While facial identity is derived from visual input, the content is traditionally taken from speech, creating an audio-visual gap between content and identity.
                       To address this challenge, we propose <b>MultiSwap</b>, a novel framework that extends FVC by integrating both audio and visual modalities for the content input, which handles three distinct sub-tasks: V+I→A (silent video with identity image to speech), A+I→A (audio and identity image to speech), and AV+I→A (combined audio-visual and identity image to speech).
                     </p>
                     <p><img align="center" src="figs/whatisourtask.png" alt="SVG Image" style="  display: block ;
@@ -50,7 +63,7 @@
                         margin-right: auto;
                         width: 60%;"></p>
                     <p style='line-height:1.3; font-size:large; text-align: justify'>
-                      We introduce task-specific models for each sub-task as well as a unified solution that can handle all three tasks with a single model. Additionally, we propose a noise-robust version of MultiSwap, with a relative improvement of 58% in content recovery compared to previous FVC methods under noise. Across all tasks, MultiSwap demonstrates strong performance in speech conversion and synthesis, as measured by both objective and subjective metrics, demonstrating its potential for multi-modal FVC applications.
+                      We introduce task-specific models for each sub-task as well as a unified solution that can handle all three tasks with a single model. Furthermore, we present a noise-robust variant of MultiSwap that outperforms prior FVC methods in content recovery under noisy conditions. In all tasks, MultiSwap achieves strong performance in speech conversion and synthesis, as measured by both objective and subjective metrics, demonstrating its potential for multi-modal FVC applications.
                     </p>
                     <p><img align="center" src="figs/mainfig.png" alt="SVG Image" style="  display: block ;
                         margin-left: auto;
@@ -108,14 +121,14 @@
               </tr>
               <tr>
                 <td colspan="2">FVMVC</td>
-                <td>MuteSwap</td>
+                <td></td>
                 <td></td>
               </tr>
           
               <tr>
                 <td><video controls style="width:150px;height:150px;"><source src="part_converted/ZJNESMhIxQ0_00004_to_9uOMectkCCs_00002/fvmvc.mp4" type="video/mp4"></video></td>
                 <td><video controls style="width:150px;height:150px;"><source src="part_converted/ZJNESMhIxQ0_00004_to_9uOMectkCCs_00002/fvmvc_noised.mp4" type="video/mp4"></video></td>
-                <td><video controls style="width:150px;height:150px;"><source src="part_converted/ZJNESMhIxQ0_00004_to_9uOMectkCCs_00002/muteswap.mp4" type="video/mp4"></video></td>
+                <td></td>
                 <td></td>
               </tr>
 
@@ -128,7 +141,7 @@
               <tr>
                 <td><video controls style="width:150px;height:150px;"><source src="part_converted/ZJNESMhIxQ0_00004_to_9uOMectkCCs_00002/MultiSwap-A.mp4" type="video/mp4"></video></td>
                 <td><video controls style="width:150px;height:150px;"><source src="part_converted/ZJNESMhIxQ0_00004_to_9uOMectkCCs_00002/MultiSwap-AN.mp4" type="video/mp4"></video></td>
-                <td><video controls style="width:150px;height:150px;"><source src="part_converted/ZJNESMhIxQ0_00004_to_9uOMectkCCs_00002/MultiSwap-V.mp4" type="video/mp4"></video></td>
+                <td><video controls style="width:150px;height:150px;"><source src="part_converted/ZJNESMhIxQ0_00004_to_9uOMectkCCs_00002/muteswap.mp4" type="video/mp4"></video></td>
                 <td><video controls style="width:150px;height:150px;"><source src="part_converted/ZJNESMhIxQ0_00004_to_9uOMectkCCs_00002/MultiSwap-AV.mp4" type="video/mp4"></video></td>
               </tr>
 
@@ -175,14 +188,14 @@
             </tr>
             <tr>
               <td colspan="2">FVMVC</td>
-              <td>MuteSwap</td>
+              <td></td>
               <td></td>
             </tr>
         
             <tr>
               <td><video controls style="width:150px;height:150px;"><source src="part_converted/UAj1hsXp18c_00012_to_sxnlvwprfSc_00001/fvmvc.mp4" type="video/mp4"></video></td>
               <td><video controls style="width:150px;height:150px;"><source src="part_converted/UAj1hsXp18c_00012_to_sxnlvwprfSc_00001/fvmvc_noised.mp4" type="video/mp4"></video></td>
-              <td><video controls style="width:150px;height:150px;"><source src="part_converted/UAj1hsXp18c_00012_to_sxnlvwprfSc_00001/muteswap.mp4" type="video/mp4"></video></td>
+              <td></td>
               <td></td>
             </tr>
 
@@ -195,7 +208,7 @@
             <tr>
               <td><video controls style="width:150px;height:150px;"><source src="part_converted/UAj1hsXp18c_00012_to_sxnlvwprfSc_00001/MultiSwap-A.mp4" type="video/mp4"></video></td>
               <td><video controls style="width:150px;height:150px;"><source src="part_converted/UAj1hsXp18c_00012_to_sxnlvwprfSc_00001/MultiSwap-AN.mp4" type="video/mp4"></video></td>
-              <td><video controls style="width:150px;height:150px;"><source src="part_converted/UAj1hsXp18c_00012_to_sxnlvwprfSc_00001/MultiSwap-V.mp4" type="video/mp4"></video></td>
+              <td><video controls style="width:150px;height:150px;"><source src="part_converted/UAj1hsXp18c_00012_to_sxnlvwprfSc_00001/muteswap.mp4" type="video/mp4"></video></td>
               <td><video controls style="width:150px;height:150px;"><source src="part_converted/UAj1hsXp18c_00012_to_sxnlvwprfSc_00001/MultiSwap-AV.mp4" type="video/mp4"></video></td>
               <td></td>
             </tr>
@@ -243,14 +256,14 @@
             </tr>
             <tr>
               <td colspan="2">FVMVC</td>
-              <td>MuteSwap</td>
+              <td></td>
               <td></td>
             </tr>
         
             <tr>
               <td><video controls style="width:150px;height:150px;"><source src="part_converted/xTkKSJSqUSI_00016_to_E22icGCvGXk_00006/fvmvc.mp4" type="video/mp4"></video></td>
               <td><video controls style="width:150px;height:150px;"><source src="part_converted/xTkKSJSqUSI_00016_to_E22icGCvGXk_00006/fvmvc_noised.mp4" type="video/mp4"></video></td>
-              <td><video controls style="width:150px;height:150px;"><source src="part_converted/xTkKSJSqUSI_00016_to_E22icGCvGXk_00006/muteswap.mp4" type="video/mp4"></video></td>
+              <td></td>
               <td></td>
             </tr>
 
@@ -263,7 +276,7 @@
             <tr>
               <td><video controls style="width:150px;height:150px;"><source src="part_converted/xTkKSJSqUSI_00016_to_E22icGCvGXk_00006/MultiSwap-A.mp4" type="video/mp4"></video></td>
               <td><video controls style="width:150px;height:150px;"><source src="part_converted/xTkKSJSqUSI_00016_to_E22icGCvGXk_00006/MultiSwap-AN.mp4" type="video/mp4"></video></td>
-              <td><video controls style="width:150px;height:150px;"><source src="part_converted/xTkKSJSqUSI_00016_to_E22icGCvGXk_00006/MultiSwap-V.mp4" type="video/mp4"></video></td>
+              <td><video controls style="width:150px;height:150px;"><source src="part_converted/xTkKSJSqUSI_00016_to_E22icGCvGXk_00006/muteswap.mp4" type="video/mp4"></video></td>
               <td><video controls style="width:150px;height:150px;"><source src="part_converted/xTkKSJSqUSI_00016_to_E22icGCvGXk_00006/MultiSwap-AV.mp4" type="video/mp4"></video></td>
               <td></td>
             </tr>
@@ -312,14 +325,14 @@
               </tr>
               <tr>
                 <td colspan="2">FVMVC</td>
-                <td>MuteSwap</td>
+                <td></td>
                 <td></td>
               </tr>
           
               <tr>
                 <td><video controls style="width:150px;height:150px;"><source src="part_converted/mgcjr1yz7ow_00016_to_7kkRkhAXZGg_00006/fvmvc.mp4" type="video/mp4"></video></td>
                 <td><video controls style="width:150px;height:150px;"><source src="part_converted/mgcjr1yz7ow_00016_to_7kkRkhAXZGg_00006/fvmvc_noised.mp4" type="video/mp4"></td>
-                <td><video controls style="width:150px;height:150px;"><source src="part_converted/mgcjr1yz7ow_00016_to_7kkRkhAXZGg_00006/muteswap.mp4" type="video/mp4"></video></td>
+                <td></td>
                 <td></td>
               </tr>
 
@@ -332,7 +345,7 @@
               <tr>
                 <td><video controls style="width:150px;height:150px;"><source src="part_converted/mgcjr1yz7ow_00016_to_7kkRkhAXZGg_00006/MultiSwap-A.mp4" type="video/mp4"></video></td>
                 <td><video controls style="width:150px;height:150px;"><source src="part_converted/mgcjr1yz7ow_00016_to_7kkRkhAXZGg_00006/MultiSwap-AN.mp4" type="video/mp4"></td>
-                <td><video controls style="width:150px;height:150px;"><source src="part_converted/mgcjr1yz7ow_00016_to_7kkRkhAXZGg_00006/MultiSwap-V.mp4" type="video/mp4"></video></td>
+                <td><video controls style="width:150px;height:150px;"><source src="part_converted/mgcjr1yz7ow_00016_to_7kkRkhAXZGg_00006/muteswap.mp4" type="video/mp4"></video></td>
                 <td><video controls style="width:150px;height:150px;"><source src="part_converted/mgcjr1yz7ow_00016_to_7kkRkhAXZGg_00006/MultiSwap-AV.mp4" type="video/mp4"></video></td>
               </tr>
 
