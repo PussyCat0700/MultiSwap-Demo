@@ -29,7 +29,7 @@
         <!-- Title -->
         <div class='row mt-5 mb-3'>
             <div class='col text-center'>
-                <p class="h3 font-weight-normal">MultiSwap: Cross-Modal Identity Conversion with Silent Video and Audio Inputs</p>
+                <p class="h3 font-weight-normal">MultiSwap: Identity Conversion with Silent Video and Audio Inputs</p>
             </div>
         </div>
         <!-- Authors -->
@@ -50,15 +50,19 @@
 
                 <div class="container" style="max-width:1100px; margin-top: 20px; margin-bottom: 40px">
                     <p style='line-height:1.3; font-size:large; text-align: justify'>
-                      Face-based Voice Conversion (FVC) leverages facial representations to modify speaker identity, using source speech to provide content while ensuring the generated speech matches the target identity inferred from facial images. While facial identity is derived from visual input, the content is traditionally taken from speech, creating an audio-visual gap between content and identity.
-                      To address this challenge, we propose <b>MultiSwap</b>, a novel framework that extends FVC by integrating both audio and visual modalities for the content input, which handles three distinct sub-tasks: V+I→A (silent video with identity image to speech), A+I→A (audio and identity image to speech), and AV+I→A (combined audio-visual and identity image to speech).
+                    In voice conversion, content specification and identity control are often treated asymmetrically across modalities.
+                    While existing works have explored using facial images (I) to represent speaker identity, linguistic content is still typically inherited from a fixed modality, implicitly coupling content representation with a single source.
+                    This raises a fundamental question: how does specifying content through different modalities affect cross-modal identity conversion?
+                    In this work, we propose <b>MultiSwap</b>, a unified framework exploring cross-modal identity conversion under three content specifications: audio-based (A+I→A), audio-visual-based (AV+I→A), and visual-based (V+I→A). Our experiments reveal a trade-off between speaker conversion effectiveness and content stability: using contents that are increasingly distant from the target speech modality facilitates identity transfer, but may degrade linguistic accuracy and perceptual quality when content is under-specified.                    
                     </p>
                     <p><img align="center" src="figs/whatisourtask.png" alt="SVG Image" style="  display: block ;
                         margin-left: auto;
                         margin-right: auto;
                         width: 60%;"></p>
                     <p style='line-height:1.3; font-size:large; text-align: justify'>
-                      We introduce task-specific models for each sub-task as well as a unified solution that can handle all three tasks with a single model. Furthermore, we present a noise-robust variant of MultiSwap that outperforms prior FVC methods in content recovery under noisy conditions. In all tasks, MultiSwap achieves strong performance in speech conversion and synthesis, as measured by both objective and subjective metrics, demonstrating its potential for multi-modal FVC applications.
+                    By jointly incorporating audio and visual contents, AV+I→A is shown to achieve the best balance between identity conversion and content stability.
+                    In addition, we introduce a unified MultiSwap model that handles all three tasks within a single framework, and a noise-robust variant that improves content recovery under noisy conditions.
+                    These results demonstrate how content modality shapes the behavior of cross-modal identity conversion, and establish MultiSwap as a versatile framework for analyzing and deploying such conversions.
                     </p>
                     <p><img align="center" src="figs/mainfig.png" alt="SVG Image" style="  display: block ;
                         margin-left: auto;
